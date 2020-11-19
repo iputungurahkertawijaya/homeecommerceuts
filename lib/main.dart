@@ -1,5 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:homeecommerce/Product.dart';
+import 'package:homeecommerce/productlist.dart';
+import 'package:homeecommerce/splashcreen.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:homeecommerce/butiklist.dart';
+import 'package:homeecommerce/info.dart';
+
 
 
 
@@ -14,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
      debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 }
@@ -50,8 +57,11 @@ class MenuCard extends StatelessWidget{
       color: Colors.white,
       child: InkWell(
         onTap: (){
-          _showDialog(context, menu);
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>butiklist())
+          );
+
         },
+
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,12 +72,18 @@ class MenuCard extends StatelessWidget{
             ),
             Text(menu.title, style: TextStyle(fontSize: 12.0)),
             Padding(padding: EdgeInsets.all(5)),
+            // Expanded(child:
+            // Image.asset(menu.icon, height: 80.0, width: 80.0, fit: BoxFit.contain,)
+            // ),
+            // Text(menu.title, style: TextStyle(fontSize: 12.0)),
+            // Padding(padding: EdgeInsets.all(5),),
           ],
         ),
       ),
     );
   }
 }
+
 
 
 
@@ -96,10 +112,18 @@ class _HomeState extends State<Home>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: Text("BUTIX"),
+
         actions: <Widget>[
+
           IconButton(
-            icon: Icon(Icons.mail, color: Colors.white,),
+            icon: Icon(Icons.info, color: Colors.white),
+            tooltip: 'add new entry',
+            onPressed:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>infoapp())
+              );
+            },
           ),
         ],
       ),
@@ -124,17 +148,20 @@ class _HomeState extends State<Home>{
 
       //botton navbar
       bottomNavigationBar: BottomNavigationBar(
+       // backgroundColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.black,),
-            label: 'Butix',
+            icon: Icon(Icons.home, color: Colors.black,size: 35,),
+             label: 'Butix',
+
+
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart, color: Colors.black,),
+            icon: Icon(Icons.shopping_cart, color: Colors.black,size: 35,),
             label: 'Keranjang',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.black,),
+            icon: Icon(Icons.person, color: Colors.black,size: 35,),
             label: 'Profil',
 
           ),
@@ -245,21 +272,21 @@ class _HomeState extends State<Home>{
 
 
 
-  // //widget untuk slide image
-  // Widget MoviCarousel = Container(
-  //   margin: EdgeInsets.only(top: 10.0),
-  //   height: 200,
-  //   child: Carousel(
-  //     images: [
-  //       AssetImage('assets/butix1.jpg'),
-  //       AssetImage('assets/butix2.jpg'),
-  //       AssetImage('assets/butix3.jpg'),
-  //       AssetImage('assets/butix4.jpg'),
-  //       AssetImage('assets/butix5.jpg'),
-  //   ],
-  //     dotSize: 8.0, // mengatur ukuran dot
-  //   ),
-  //   );
+  //widget untuk slide image
+  Widget MoviCarousel = Container(
+    margin: EdgeInsets.only(top: 10.0),
+    height: 200,
+    child: Carousel(
+      images: [
+        AssetImage('assets/butix1.jpg'),
+        AssetImage('assets/butix2.jpg'),
+        AssetImage('assets/butix3.jpg'),
+        AssetImage('assets/butix4.jpg'),
+        AssetImage('assets/butix5.jpg'),
+    ],
+      dotSize: 8.0, // mengatur ukuran dot
+    ),
+    );
 
 }
 
