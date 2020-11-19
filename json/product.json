@@ -1,0 +1,38 @@
+[ 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 1000, 
+	   "image": "butix.jpg" 
+	}, 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 800, 
+	   "image": "butix.jpg" 
+	}, 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 2000, 
+	   "image": "butix.jpg"  
+	}, 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 1500, 
+	   "image": "butix.jpg"  
+	}, 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 100, 
+	   "image": "butix.jpg"  
+	}, 
+	{ 
+	   "name": "Kebaya", 
+	   "description": "Kebaya Bali Baru", 
+	   "price": 20, 
+	   "image": "butix.jpg" 
+	} 
+ ]
